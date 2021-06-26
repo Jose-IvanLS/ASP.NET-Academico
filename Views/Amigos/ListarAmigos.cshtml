@@ -1,0 +1,35 @@
+﻿@model List<ATVitor.Models.Amigo>
+@{
+    ViewData["Title"] = "Todos os amigos";
+    var listaDeAmigos = Model;
+}
+
+<h1>Lista de amigos cadastrados</h1>
+<form action="/amigos/listar" method="get">
+    <input type="text" name="nome"/>
+    <input type="submit" value="Buscar"/>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <!--<th scope="col">ID</th>-->
+            <th scope="col">Nome</th>
+            <th scope="col">Sobrenome</th>
+            <th scope="col">Aniversário</th>
+            <th scope="col">Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var amigo in listaDeAmigos) {
+        <tr>
+            <!--<td>@amigo.Id</td>-->
+            <td>@amigo.Nome</td>
+            <td>@amigo.Sobrenome</td>
+            <td>@amigo.Aniversario.Date.ToString("d")</td>
+            <td>
+                <a href="/amigos/excluir?id=@amigo.Id">Excluir</a> | <a href="/amigos/editar?id=@amigo.Id">Editar</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

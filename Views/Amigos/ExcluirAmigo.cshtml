@@ -1,0 +1,16 @@
+﻿@model ATVitor.Models.Amigo
+@{
+    var amigo = Model;
+}
+
+<h1>Página de exclusão de amigo</h1>
+<br />
+
+<form action="/amigos/excluir" method="post">
+    <input type="number" class="m-1" value="@amigo.Id" name="id" readonly/><br />
+    <input type="text" class="m-1" value="@amigo.Nome" name="nome" readonly/><br />
+    <input type="text" class="m-1" value="@amigo.Sobrenome" name="sobrenome" readonly/><br />
+    <input type="text" class="m-1" value="@amigo.Aniversario" name="aniversario" readonly/><br />
+    <input type="submit" class="m-1" value="Confirmar exclusão" /><br />
+    <a class="m-1" href="/amigos/listar">Voltar para lista</a>
+</form>

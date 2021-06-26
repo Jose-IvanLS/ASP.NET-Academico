@@ -1,0 +1,23 @@
+﻿@model ATVitor.Models.Amigo
+@{
+    var amigo = Model;
+    
+}
+
+</script>
+<h1>Página de edição de amigo</h1>
+<br />
+<form action="/amigos/editar" method="post">
+    <input type="number" class="m-1" value="@amigo.Id" name="id" readonly /><br />
+    <input type="text" class="m-1" value="@amigo.Nome" name="nome" /><br />
+    <input type="text" class="m-1" value="@amigo.Sobrenome" name="sobrenome" /><br />
+    <input type="date" class="m-1" id="dataAniversario" name="aniversario" asp-for="Aniversario" /><br />
+    <input type="submit" class="m-1" value="Confirmar edição" /><br />
+    <a class="m-1" href="/amigos/listar">Voltar para lista</a>
+</form>
+
+
+
+
+
+
